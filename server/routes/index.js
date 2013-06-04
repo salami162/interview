@@ -1,6 +1,6 @@
 exports.index = function (req, res) {
   var data = {
-    title : 'Limin Shen'
+    title : 'Let\'s has some FUN!'
   };
   res.render('index', data);
 };

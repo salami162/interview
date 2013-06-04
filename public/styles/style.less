@@ -1,0 +1,29 @@
+body {
+  padding: 100px 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.settop (@topmargin: 25px) {
+  margin-top: @topmargin;
+}
+
+.container {
+  .settop;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 79px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:rgba(0, 0, 0, 0.8);
+  z-index: 2000008000;
+  color: white;
+}
