@@ -1,0 +1,18 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/styles/bootstrap.css')
+    link(rel='stylesheet', href='/styles/style.css')
+  body
+    div.navbar.navbar-fixed-top
+      div.navbar-inner
+        div.container
+
+    div.container
+
+      block content
+
+      ul.errors.unstyled
+
+    script(src='/scripts/require.js', data-main='/scripts/main.js')
