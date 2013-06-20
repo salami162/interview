@@ -14,29 +14,19 @@ define('window', function () {
 
 require([
   'vendor/jquery',
-  'vendor/underscore'
+  'vendor/underscore',
+  'recurse',
+  'timer'
 ], function (
   $,
-  _
+  _,
+  Recurse,
+  Timer
 ) {
 
-  var fn = function () {
-      var list = [];
-
-      function recurse () {
-          var args = [].slice.call(arguments);
-
-          if (!args.length) {
-              console.log( list.join(' ') );
-          } else {
-              list = list.concat(args);
-              return recurse;
-          }
-      };
-
-      return recurse.apply(null, arguments);
-  };
-
-  console.log('done');
+  Recurse.join('hello')('world')('goodbye')();
+  var allFoos = Recurse.find('foo');
+  console.log(allFoos);
+  // Timer(1, 10, 500);
 });
 
