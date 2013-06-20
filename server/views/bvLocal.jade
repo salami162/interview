@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div#BVRRSummaryContainer
+  div#BVRRContainer
+
+block scripts
+  script(src='http://display-qa.ugc.bazaarvoice.com/bvstaging/static/bv-localtestclient/en_US/bvapi.js')
+  script(type='text/javascript')
+    $BV.configure('global', { productId : 'product1'});
+    $BV.ui( 'rr', 'show_reviews', {
+      doShowContent : function () {
+        // If the container is hidden (such as behind a tab), put code here to make it visible (open the tab).
+      }, showComments:true
+    });

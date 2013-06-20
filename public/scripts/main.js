@@ -19,7 +19,24 @@ require([
   $,
   _
 ) {
-  $(function () {
-    console.log('ready');
-  });
+
+  var fn = function () {
+      var list = [];
+
+      function recurse () {
+          var args = [].slice.call(arguments);
+
+          if (!args.length) {
+              console.log( list.join(' ') );
+          } else {
+              list = list.concat(args);
+              return recurse;
+          }
+      };
+
+      return recurse.apply(null, arguments);
+  };
+
+  console.log('done');
 });
+

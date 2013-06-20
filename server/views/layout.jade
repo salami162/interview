@@ -4,6 +4,7 @@ html
     title= title
     link(rel='stylesheet', href='/styles/bootstrap.css')
     link(rel='stylesheet/less', href='/styles/style.less')
+    block css
   body
     div.navbar.navbar-fixed-top
       div.navbar-inner
@@ -16,4 +17,5 @@ html
       ul.errors.unstyled
 
     script(src='/scripts/vendor/less.js')
-    script(src='/scripts/require.js', data-main='/scripts/main.js')
+
+    block scripts
