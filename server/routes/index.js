@@ -4,7 +4,7 @@ exports.index = function (req, res) {
 
   var newDr = new dimsumReader('qa');
 
-  newDr.setEnvironment('qa');
+  // newDr.setEnvironment('qa');
   var clients;
 
   // newDr.read('Academy', {}).done(function (data) {
@@ -24,4 +24,22 @@ exports.bvLocal = function (req, res) {
     title : 'BV Local Test Page'
   };
   res.render('bvLocal', data);
+};
+
+exports.data = function (req, res) {
+
+  var data = {
+    Limin : {
+      Name : 'Limin Shen',
+      Gender : 'F',
+      Occupation : 'Software Engineer'
+    },
+    Raquel : {
+      Name : 'Raquel Velez',
+      Gender : 'F',
+      Occupation : 'Software Engineer'
+    }
+  };
+  res.write( JSON.stringify(data) );
+  res.end();
 };

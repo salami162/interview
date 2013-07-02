@@ -16,17 +16,35 @@ require([
   'vendor/jquery',
   'vendor/underscore',
   'recurse',
-  'timer'
+  'timer',
+  'reader'
 ], function (
   $,
   _,
   Recurse,
-  Timer
+  Timer,
+  Reader
 ) {
 
   Recurse.join('hello')('world')('goodbye')();
   var allFoos = Recurse.find('foo');
   console.log(allFoos);
+
+  var newReader = new Reader();
+
+  newReader
+    .read('Limin', { timeout : 200 })
+    .done(function (info) {
+      console.log(info);
+  });
+
+
+  newReader
+    .read('Raquel', { timeout : 200 })
+    .done(function (info) {
+      console.log(info);
+  });
+
   // Timer(1, 10, 500);
 });
 
