@@ -17,34 +17,39 @@ require([
   'vendor/underscore',
   'recurse',
   'timer',
-  'reader'
+  'reader',
+  'test'
 ], function (
   $,
   _,
   Recurse,
   Timer,
-  Reader
+  Reader,
+  Test
 ) {
 
-  Recurse.join('hello')('world')('goodbye')();
-  var allFoos = Recurse.find('foo');
-  console.log(allFoos);
+  // Recurse.join('hello')('world')('goodbye')();
+  // var allFoos = Recurse.find('foo');
+  // console.log(allFoos);
 
-  var newReader = new Reader();
+  // var newReader = new Reader();
 
-  newReader
-    .read('Limin', { timeout : 200 })
-    .done(function (info) {
-      console.log(info);
-  });
+  // newReader
+  //   .read('Limin', { timeout : 200 })
+  //   .done(function (info) {
+  //     console.log(info);
+  // });
 
 
-  newReader
-    .read('Raquel', { timeout : 200 })
-    .done(function (info) {
-      console.log(info);
-  });
+  // newReader
+  //   .read('Raquel', { timeout : 200 })
+  //   .done(function (info) {
+  //     console.log(info);
+  // });
 
   // Timer(1, 10, 500);
+  var result = Test('amy', 'yam');
+  var result1 = Test('amyaa', 'ayama');
+  console.log(result, result1);
 });
 

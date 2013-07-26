@@ -18,17 +18,16 @@ app.enable("jsonp callback");
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/server/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
+app.use(express.favicon())
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(app.router);
 app.use(express.static( path.join(__dirname, 'public') ));
-console.log(path.join(__dirname, 'public') );
+
 // development only
-if ('development' === app.get('env')) {
+app.configure('development', function () {
   app.use( express.errorHandler({ dumpExceptions: true, showStack: true }) );
-}
+});
 
 app.get('/', routes.index);
 app.get('/bvLocal', routes.bvLocal);
