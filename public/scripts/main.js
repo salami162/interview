@@ -19,7 +19,9 @@ require([
   'timer',
   // 'reader',
   'anagram',
-  'keyboard'
+  'keyboard',
+  'reverse',
+  'spiral'
 ], function (
   $,
   _,
@@ -27,7 +29,9 @@ require([
   Timer,
   // Reader,
   Anagram,
-  Keyboard
+  Keyboard,
+  Reverse,
+  Spiral
 ) {
 
   // Recurse.join('hello')('world')('goodbye')();
@@ -56,5 +60,10 @@ require([
 
   var keyboard = new Keyboard();
   console.log(keyboard.findPath('bob'));
+
+  console.log(Reverse('This is a sentense.'))
+
+  var matrix = [[11, 12, 13, 14, 15],[21, 22, 23, 24, 25],[31, 32, 33, 34, 35],[41, 42, 43, 44, 45]];
+  Spiral(matrix);
 });
 
