@@ -2,7 +2,7 @@ define([
   'vendor/jquery'
 ], function ($) {
 
-  function reader () {
+  function reader() {
     this.people = {};
     console.log('reader created!');
   }
@@ -31,10 +31,10 @@ define([
           });
         }
         dfd.resolve(data);
-      })
+      });
     }
     return dfd.promise();
-  }
+  };
 
   return reader;
 });

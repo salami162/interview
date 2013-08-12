@@ -2,7 +2,7 @@ define(function () {
   var fn = function () {
       var list = [];
 
-      function recurse () {
+      function recurse() {
           var args = [].slice.call(arguments);
 
           if (!args.length) {

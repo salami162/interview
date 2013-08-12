@@ -17,15 +17,17 @@ require([
   'vendor/underscore',
   'recurse',
   'timer',
-  'reader',
-  'test'
+  // 'reader',
+  'anagram',
+  'keyboard'
 ], function (
   $,
   _,
   Recurse,
   Timer,
-  Reader,
-  Test
+  // Reader,
+  Anagram,
+  Keyboard
 ) {
 
   // Recurse.join('hello')('world')('goodbye')();
@@ -48,8 +50,11 @@ require([
   // });
 
   // Timer(1, 10, 500);
-  var result = Test('amy', 'yam');
-  var result1 = Test('amyaa', 'ayama');
+  var result = Anagram('amy', 'yam');
+  var result1 = Anagram('amyaa', 'ayama');
   console.log(result, result1);
+
+  var keyboard = new Keyboard();
+  console.log(keyboard.findPath('bob'));
 });
 

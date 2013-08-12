@@ -5,7 +5,9 @@ block content
   div#BVRRContainer
 
 block scripts
-  script(src='http://display-qa.ugc.bazaarvoice.com/bvstaging/static/bv-localtestclient/en_US/bvapi.js')
+  div#bvapi
+    //script(src='http://display-qa.ugc.bazaarvoice.com/bvstaging/static/bv-localtestclient/Vans%20Site/bvapi.js')
+    script(id='bvapis', src='http://display-qa.ugc.bazaarvoice.com/bvstaging/static/bv-localtestclient/en_US/bvapi.js')
   script(type='text/javascript')
     $BV.configure('global', { productId : 'product1'});
     $BV.ui( 'rr', 'show_reviews', {
